@@ -8,7 +8,7 @@ Código desenvolvido no curso da Alura com algumas modificações feitas por mim
 curl http://localhost:3000/pagamentos/pagamento -X POST -v -H "Content-type: application/json" -d @files/pagamentos.json | json_pp
 ```
 
-## dicas
+## Dicas
 
 - Para fazer o express-validator é preciso ter o 2.20.8
 - Não se esqueça de subir o MySQL
