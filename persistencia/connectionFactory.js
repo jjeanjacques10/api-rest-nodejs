@@ -1,12 +1,12 @@
 var mysql  = require('mysql');
 
 function createDBConnection(){
-		return mysql.createConnection({
-			host: '172.20.0.2',
-			user: 'docker',
-			password: 'banana pijama',
-			database: 'payfast'
-		});
+	return mysql.createConnection({
+		host: '',
+		user: '',
+		password: '',
+		database: 'payfast'
+	});
 }
 
 module.exports = function() {
