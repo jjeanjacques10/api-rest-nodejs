@@ -4,6 +4,29 @@ module.exports = function (app) {
         res.send('OK!');
     });
 
+    app.put('/pagamentos/pagamento/:id', function(req, res){
+
+        var pagamento = {};
+        var id = req.params.id;
+
+        pagamento.id = id;
+        pagamento.status = 'CONFIRMADO';
+
+        var connection = app.persistencia.connectionFactory();
+        var pagamentoDao = new app.persistencia.PagamentoDao(connection);
+
+        pagamentoDao.atualiza(pagamento, function(erro){
+            if(erro){
+                res.status(500).send(erro);
+                return;
+            }else{
+                console.log('pagamento confirmado!');
+                res.status(200).json(pagamento);
+            }
+        });
+
+    });
+
     app.post("/pagamentos/pagamento", function (req, res) {
         var pagamento = req.body;
 
